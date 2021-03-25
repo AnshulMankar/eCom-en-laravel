@@ -11,7 +11,73 @@
 </head>
 <body>
 	{{View::make('header')}}
-	@yield('content');
+	@yield('content')
 	{{View::make('footer')}}
 </body>
+
+<style>
+	.custom-login{
+		height: 500px;
+		padding-top: 100px;
+	}
+	img.slider-img{
+		height: 400px !important;
+	}
+	.custom-product{
+		height: 600px;
+	}
+	.slider-text{
+		opacity: 0.5;
+		background-color: grey;
+	}
+	.trending-image{
+		height: 80px;
+	}
+	.trending-item{
+		float: left;
+		width: 20%;
+	}
+	.trending-wrapper{
+		margin: 30px;
+	}
+	.trip{
+		margin: 30px;
+	}
+	.detail-img{
+		height: 200px;
+	}
+	.pxl{
+		margin: 30px;
+	}
+	.xyz{
+		margin: 20px;
+	}
+	.search-box{
+		width: 400px !important;
+	}
+	.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  margin: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.cardx{
+	
+}
+</style>
+
 </html>

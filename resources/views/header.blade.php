@@ -1,9 +1,20 @@
+<?php 
+use App\Http\Controllers\ProductController;
+$total = 0;
+if (Session::has('user')) {
+  $total = ProductController::carItem();
+  } 
+  else {
+  # code...
+}
 
+ $total = ProductController::carItem();
+?> 
  
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
  
-  <a class="navbar-brand" href="#">Logo</a>
+  <a class="navbar-brand" href="#">EBay</a>
 
 
   <ul class="navbar-nav active">
@@ -14,16 +25,31 @@
       <a class="nav-link" href="#">Orders</a>
     </li>
   
-  <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+  <form class="d-flex" action="/search">
+    <div class="form-group">
+        <input class="form-control search-box" name="query" type="text" placeholder="Search" aria-label="Search">
+    </div>
+        <button action="/search" class="btn btn-outline-danger buttonlx" type="submit">Search</button>
   </form>
 </ul>
 
-<div class="container text-right">
-    <p class="d-inline">Order Carded</p>
-    <button type="button" class="btn btn-primary d-inline">Card(0)</button>
+<div class="btn-block pull-right">
+            <button type="button" class="btn btn-primary">Card({{$total}})</button>
 </div>
-      
+@if(Session::has('user'))
+{
+<div class="dropdown">
+  <div><button class="btn btn-warning">{{Session::get('user')['name']}}</button></div>
+  <div class="dropdown-content">
+    <a href="/logout"><button class="btn btn-outline-warning">Logout</button></a>
+  </div>
+</div>
+}
+@else
+{
+<li><a href="/login">Login</a></li>
+}
+@endif
 </nav>
+
  
