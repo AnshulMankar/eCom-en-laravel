@@ -14,12 +14,12 @@ if (Session::has('user')) {
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
  
-  <a class="navbar-brand" href="#">EBay</a>
+  <a class="navbar-brand" href="/">EBay</a>
 
 
   <ul class="navbar-nav active">
     <li class="nav-item">
-      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="/">Home</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Orders</a>
@@ -34,7 +34,7 @@ if (Session::has('user')) {
 </ul>
 
 <div class="btn-block pull-right">
-            <button type="button" class="btn btn-primary">Card({{$total}})</button>
+            <a href="/cartlist"><button type="button" class="btn btn-primary">Card({{$total}})</button></a>
 </div>
 @if(Session::has('user'))
 {

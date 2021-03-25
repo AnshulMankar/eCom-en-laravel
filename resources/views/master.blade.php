@@ -75,8 +75,8 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.cardx{
-	
+.rowline{
+	border-bottom: 1px solid;
 }
 </style>
 
